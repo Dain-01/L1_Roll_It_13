@@ -23,7 +23,7 @@ comp_points += comp_one + comp_two
 
 #Output the results
 
-print("\nIntial Points")
+print("\nInitial Points")
 print(f"User    - Roll 1: {user_one} \t| Roll 2: {user_two} \t| Total: {user_points} ")
 print(f"Computer    - Roll 1: {comp_one} \t| Roll 2: {comp_two} \t| Total: {comp_points} ")
 
