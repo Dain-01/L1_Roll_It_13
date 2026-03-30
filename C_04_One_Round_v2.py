@@ -36,7 +36,7 @@ if double_user == "yes":
 
 # assume user goes first. . .
 first = "User"
-second = "Computer"
+second = "Comp"
 player_1_points = user_points
 player_2_points = comp_points
 
@@ -56,7 +56,7 @@ else:
 
 #Loop until we find a winner...
 while player_1_points < 13 and player_2_points < 13:
-    print("____")
+    print()
     input("Press <enter> to continue this round\n")
 
     # first player rolls the die and score is updated
@@ -66,7 +66,7 @@ while player_1_points < 13 and player_2_points < 13:
     print(f"{first}: Rolled a {player_1_roll} - has {player_1_roll} points")
 
     #if the first person's score is over 13, end the round
-
+ 
 
     # second person rolls the die (and score is updated)
     player_2_roll = random.randint(1,6)
@@ -83,19 +83,19 @@ user_points = player_1_points
 comp_points = player_2_points
 
 # switch the user and computer points if the computer went first
-if first == "Computer":
+if first == "Comp":
     user_points, comp_points = comp_points, user_points
 
 # work out who won
 if user_points > comp_points:
-    winner = "user"
+    winner = "User"
 else:
-    winner = "computer"
+    winner = "Comp"
 
 round_feedback = f"The {winner} won."
 
 # double user points if eligible
-if winner == "user" and double_user == "yes":
+if winner == "User" and double_user == "yes":
     user_points = user_points * 2
 
 # Output round results
