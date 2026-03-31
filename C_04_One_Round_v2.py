@@ -18,6 +18,11 @@ def initial_points(which_player):
 
     return total, double
 
+def make_statement(statement, decoration):
+    """Adds emoji / additional characters to the start and end of headings"""
+    ends = decoration * 3
+    print(f"\n{ends} {statement} {ends}")
+
 # Main starts here. . .
 
 # Follows the "retrieve user points" command / function
@@ -52,7 +57,7 @@ elif user_points == comp_points:
 else:
     player_1_points, player_2_points = player_2_points, player_1_points
     first, second = second, first
-    print("Computer starts")
+    print("Computer starts since they rolled less")
 
 #Loop until we find a winner...
 while player_1_points < 13 and player_2_points < 13:
@@ -66,7 +71,10 @@ while player_1_points < 13 and player_2_points < 13:
     print(f"{first}: Rolled a {player_1_roll} - has {player_1_roll} points")
 
     #if the first person's score is over 13, end the round
- 
+    if player_1_points >= 13:
+        if player_2_points >= 13:
+            break
+
 
     # second person rolls the die (and score is updated)
     player_2_roll = random.randint(1,6)
@@ -99,6 +107,7 @@ if winner == "User" and double_user == "yes":
     user_points = user_points * 2
 
 # Output round results
-print("\nRound Results")
+make_statement("Round Results", "=")
 print(f"User Points: {user_points} | Computer Points: {comp_points}")
 print(round_feedback)
+print()
