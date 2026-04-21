@@ -21,9 +21,9 @@ while comp_score < game_goal and user_score < game_goal:
     print("*** Game Update ***") # replace with call to statement generator
     print(f"User Score: {user_score} | Computer score {comp_score}")
 
-    # end of entire game, output final results
-    print()
-    if user_score > comp_score:
-        print("The user won") # replace this with statement generator call
-    else:
-        print("The computer won")
+# end of entire game, output final results
+print()
+if user_score > comp_score:
+    print("The user won") # replace this with statement generator call
+else:
+    print("The computer won")
